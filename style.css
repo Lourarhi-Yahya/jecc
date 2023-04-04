@@ -1283,7 +1283,9 @@ a:hover, a:focus, a.active {
 .hero-area p {
   margin: 0 0 25px;
 }
-
+.police{
+  font-size: 70px;
+}  
 .hero-area .heading-holder {
   margin-bottom: 60px;
 }
@@ -1479,15 +1481,25 @@ a:hover, a:focus, a.active {
 
 -------------------------------------------------------------------*/
 .facts-list {
-  font-family: empty;
-  padding: 10px 2px;
+  font-family: 'Montserrat', sans-serif;
+  padding: 20px 0;
   text-align: center;
+  border-top: 2px solid #ccc;
+  border-bottom: 2px solid #ccc;
 }
 
 .facts-list li {
-  margin: 0 0 10px;
-  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  margin: 0 0 20px;
+  font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
   position: relative;
+  list-style: none;
+  text-align: left;
+  transition: transform 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.facts-list li:hover {
+  transform: scale(1.1);
 }
 
 .facts-list li:after {
@@ -1497,13 +1509,17 @@ a:hover, a:focus, a.active {
   bottom: auto;
   left: auto;
   right: 0;
-}/*
-.facts-list li:after {
-  border-right: 1px solid #e8e8e8;
-  height: 30px;
+  border-right: 2px solid #e8e8e8;
+  height: 40px;
   display: none;
   transform: translateY(-50%);
-}*/
+  transition: opacity 0.3s ease-in-out;
+}
+
+.facts-list li:hover:after {
+  opacity: 1;
+  display: block;
+}
 
 .facts-list li:last-child {
   padding-right: 0;
@@ -1519,25 +1535,35 @@ a:hover, a:focus, a.active {
 }
 
 .facts-list h3 {
-  font: 600 22px/26px "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font: 600 26px/30px "Montserrat", sans-serif;
   margin: 0;
-  text-transform: capitalize;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #b61e1e;
+  position: relative;
+  z-index: 1;
+  transition: color 0.3s ease-in-out;
+}
+
+.facts-list h3:hover {
+  color: #b91212;
 }
 
 .facts-list .text-block {
   display: block;
   padding: 0;
-  color: #b61e1e;
-  font-weight: 900;
-  font-size: 14px;
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 20px;
   text-transform: uppercase;
+  letter-spacing: 1px;
+  position: relative;
+  z-index: 1;
+  transition: text-shadow 0.3s ease-in-out;
 }
-.facts-list::before{
-content: 'loading';
-position: absolute;
-font-size: 12em;
-text-transform: uppercase;
-color: rgba(255, 255, 255, 0);
+
+.facts-list .text-block:hover {
+  text-shadow: 0 0 5px #ff7f50, 0 0 10px #ff7f50
 }
 
 .counter{
@@ -1558,7 +1584,7 @@ color: white;
   color: white;
   }
   .counter3::before{
-    content: '£';
+    content: '€';
     font-size: 2em;
     color: white;
     }
@@ -2181,20 +2207,24 @@ body {
   display: flex;
   flex-flow: row wrap;
 }
+
 .card-container:hover .card {
   opacity: .7;
   cursor: pointer;
   filter: grayscale(1);
 }
 .card-container .card {
+  border: 2px solid rgb(0, 0, 0);
+}
+.card-container .card {
   margin: 10px;
-  width: calc(100% / 3 - 20px);
-  float: left;
+  width: 100%;
   box-shadow: 0 0 2px 2px rgba(0,0,0,.05);
   background: #FFF;
   -webkit-transition: .3s all ease;
   transition: .15s all ease;
 }
+
 .card-container .card:hover {
   box-shadow: 0 0 8px 3px rgba(0,0,0,.15);
   transform: scale(1.025);
@@ -2202,26 +2232,31 @@ body {
   filter: grayscale(0);
   transition: .35s all ease;
 }
+
 .card-container .card img {
   width: 100%;
   padding: 0;
   margin: 0;
 }
+
 .card-container .card .content {
   padding: 15px 20px;
 }
+
 .card-container .card h3 {
   font: 2.8rem/3.4rem 'Bree Serif', serif;
   padding: 0;
   margin: 0 0 10px;
   letter-spacing: -.075rem
 }
+
 .card-container .card p {
   color: #888;
   padding: 0;
   margin: 0;
   font: 400 1.6rem/2.2rem 'Open Sans script=all', sans-serif;
 }
+
 .services {
   display: flex;
   flex-wrap: wrap;

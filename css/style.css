@@ -752,6 +752,10 @@ img.aligncenter {
   content: "\e910";
 }
 
+.ico-linkedin:before {
+  content: "\f08c";
+}
+
 .ico-facebook-f:before {
   content: "\e910";
 }
@@ -2790,7 +2794,7 @@ h6 a,
 .social-networks li {
   display: inline-block;
   vertical-align: top;
-  margin: 0 2px 5px;
+  margin: 0 8px 8px;
 }
 
 .social-networks a {
