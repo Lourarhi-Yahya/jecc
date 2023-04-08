@@ -81,5 +81,52 @@
 		}
 	};
 	contactForm();
+	function showMore() {
+		var hiddenText = document.querySelector('.hidden');
+		hiddenText.style.display = 'block';
+		var readMoreButton = document.querySelector('button');
+		readMoreButton.style.display = 'none';
+	  }
+	  
 
 })(jQuery);
+// Get all the counter elements
+const counters = document.querySelectorAll('.counter');
+
+// Function to check if an element is in the viewport
+function isElementInViewport(el) {
+  const rect = el.getBoundingClientRect();
+  return (
+    rect.top >= 0 &&
+    rect.left >= 0 &&
+    rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+    rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+  );
+}
+
+// Function to count up to a target number
+function countUp(el) {
+  const target = +el.getAttribute('data-target');
+  let count = 0;
+  const speed = 2000 / target; // Adjust speed based on target number
+  const timer = setInterval(() => {
+    count++;
+    el.innerText = count;
+    if (count === target) {
+      clearInterval(timer);
+    }
+  }, speed);
+}
+
+// Function to handle the scroll event
+function handleScroll() {
+  counters.forEach(counter => {
+    if (isElementInViewport(counter) && !counter.classList.contains('counted')) {
+      counter.classList.add('counted');
+      countUp(counter);
+    }
+  });
+}
+
+// Add event listener to window scroll event
+window.addEventListener('scroll', handleScroll);

@@ -965,7 +965,7 @@ h6 a,
   border-radius: 99px;
   border-color: #fff;
   background: none;
-  color: #fff;
+  color: #000000;
 }
 
 .btn-default.btn-white:hover, .btn-default.btn-white:focus, .btn-default.btn-white:active {

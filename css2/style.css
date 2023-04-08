@@ -91,25 +91,25 @@ p {
   }
   .back-button {
     position: absolute;
-    top: 20px;
-    right: 20px;
+    top: 50px;
+    right: 60px;
     display: inline-block;
     padding: 12px 24px;
     
-    color: #ffffff;
-    text-decoration: none;
-    font-size: 18px;
-    font-weight: bold;
-    letter-spacing: 1px;
-    border-radius: 6px;
-    transition: all 0.2s ease-in-out;
-    border: none;
+    display: inline-block;
+  border-radius: 20px;
+  background-color: #c12c22;
+  color: #fff;
+  font-size: 18px;
+  padding: 10px 60px;
+  text-decoration: none;
+  transition: all 0.4s ease;
   }
   
   .back-button:hover {
-    color: #000000;
-    background-color: #ffffff;
-    transform: scale(1.05);
+  background-color: #ffffff;
+  color: #000000;
+  transform: scale(1.1);
   }
   
   

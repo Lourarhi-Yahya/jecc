@@ -43,17 +43,29 @@ $(document).ready(function() {
 		scrollTime: 1500,
 		easing: 'easeInOutExpo'
 	});
-
-	initCounter();
-	// Counter init
+	
 	function initCounter() {
 		"use strict";
-
-		jQuery('.counter').counterUp({
-			delay: 10,
-			time: 2000
+	  
+		var counter = jQuery('.counter');
+		var targetValue = 100; // replace with your desired value
+	  
+		counter.counterUp({
+		  delay: 10,
+		  time: 2000,
+		  callback: function() {
+			if (counter.text() == targetValue) {
+			  counter.counterUp({
+				delay: Infinity, // set delay to infinity to stop animation
+				time: 0 // set time to 0 to stop animation
+			  });
+			}
+		  }
 		});
-	}
+	  }
+	  
+	
+	
 
 	initSlickSlider();
 	function initSlickSlider() {
@@ -110,7 +122,13 @@ $(document).ready(function() {
 			]
 		});
 	}
-
+	function showMore() {
+		var hiddenText = document.querySelector('.hidden');
+		hiddenText.style.display = 'block';
+		var readMoreButton = document.querySelector('button');
+		readMoreButton.style.display = 'none';
+	  }
+	  
 	initLightbox();
 	// modal popup init
 	function initLightbox() {
