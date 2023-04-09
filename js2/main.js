@@ -117,7 +117,18 @@ function countUp(el) {
     }
   }, speed);
 }
-
+function typeText(text) {
+	var i = 0;
+	var typingInterval = setInterval(function() {
+	  if (i < text.length) {
+		document.getElementById("typing-effect").innerHTML += text.charAt(i);
+		i++;
+	  } else {
+		clearInterval(typingInterval);
+	  }
+	}, 50); // Adjust this value to control the typing speed
+  }
+  
 // Function to handle the scroll event
 function handleScroll() {
   counters.forEach(counter => {
