@@ -1323,20 +1323,8 @@ a:hover, a:focus, a.active {
   white-space: nowrap;
   overflow: hidden;
   letter-spacing: 2px;
-  position: relative; /* sets the parent element for the cursor */
   animation: typing-effect 4s steps(30, end) 1s forwards infinite; /* added infinite to make it repeat indefinitely */
   text-align: center; /* centers the text vertically */
-}
-
-.hero-area h1 .text-small::after {
-  content: "|"; /* sets the content to a vertical bar (the cursor) */
-  position: absolute;
-  top: 0;
-  right: -10px; /* adjust as needed to position the cursor */
-  height: 100%;
-  display: block;
-  color: red; /* sets the color of the cursor to red */
-  animation: blink 1s infinite;
 }
 
 @keyframes typing-effect {
@@ -1348,11 +1336,6 @@ a:hover, a:focus, a.active {
   }
 }
 
-@keyframes blink {
-  50% {
-    opacity: 0;
-  }
-}
 
 
 .hero-area h1 .clr {
